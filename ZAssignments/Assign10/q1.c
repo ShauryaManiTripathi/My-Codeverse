@@ -103,7 +103,17 @@ int findclosestancester(Node root,int a,int b){
     return 0;
     
 }
-
+int findLCA(Node root,int a,int b)
+{
+    if(!root)return 0;
+    if(root->d==a||root->d==b)return root->d;
+    int aa=findLCA(root->left,a,b);
+    int bb=findLCA(root->right,a,b);
+    if(aa&&bb)return root->d;
+    if(aa)return aa;
+    if(bb)return bb;
+    return 0;
+}
 void insertBST(Node *root,int t){
    if(*root==NULL)
    {
