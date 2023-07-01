@@ -4,12 +4,89 @@
 - stack and queue
 - Questions
   1. implement stack and queue using linked list
-  2. find k'th element from last in linked list
+  2. find k'th element from last in linked list AND find middle element in linked list AND check if list has a loop or not. 
      - SOLUTION
      three approaches->>>
        1. using hash table
-       2. using two start-->end traversals
-       3. using two pointers, starting 2nd pointer after first has moved k-1 times
+       2. using two start-->end traversals(not for loop ques)
+       3. using two pointers
+             ```cpp
+            //finding middle using two pointers
+            void findMiddle(Node* head){
+                Node* slow=head;
+                Node* fast=head;
+                //while(fast && fast->next)
+                while(fast!=nullptr && fast->n ext!=nullptr){
+                slow=slow->next;
+                fast=fast->next->next;
+                }
+                cout<<slow->data;
+            }
+            ```
+            ```cpp
+            //finding k'th element from last using two pointers
+            void findKthFromLast(Node* head,int k){
+                Node* slow=head;
+                Node* fast=head;
+                int i=0;
+                while(i<k){
+                    fast=fast->next;
+                    i++;
+                }
+                while(fast!=nullptr){
+                    slow=slow->next;
+                    fast=fast->next;
+                }
+                cout<<slow->data;
+            }
+            ```
+            ```cpp
+            //finding if list has a loop or not using two pointers
+            //floyd method
+            void findLoop(Node* head){
+                Node* slow=head;
+                Node* fast=head;
+                while(fast!=nullptr && fast->next!=nullptr){
+                    slow=slow->next;
+                    fast=fast->next->next;
+                    if(slow==fast){
+                        cout<<"loop found";
+                        return;
+                    }
+                }
+                cout<<"loop not found";
+            }
+            //what if the fast pointer skips 2 nodes or more
+            ```
+  3. find if the list has a loop or not?If yes, then find the head of the loop
+     - SOLUTION
+       1. the same solution as in finding loop just we need to do lil extra
+           ```cpp
+           void findLoopHead(Node* head){
+            Node* slow=head,fast=head;
+            int Loopexists=0;
+            while(fast!=nullptr && fast->next!=nullptr){
+                slow=slow->next;
+                fast=fast->next->next;
+                if(slow==fast){
+                    Loopexists=1;
+                    break;
+                }
+            }
+            //reset slow pointer to head, and start moving fast,slow together until they meet IFF Loopexists=1
+            if(Loopexists){
+                slow=head;
+                while(slow!=fast){
+                    fast=fast->next;
+                    slow=slow->next;
+                }
+                return slow
+            }
+            return NULL;
+           }
+           //how does moving slow pointer at head,then starting the slow and fast to move together makes them meet at loop's head  
+           ```
+  4. find the length of loop in the looped 
 - circular linked lists are used in OS for data handling
 - A memory efficient doubly linked list using single exOR(prev^next)pointer
 - unrolled linked list with sqrt(n) in each (list node)
@@ -22,7 +99,10 @@
 - skip list
   1. skip list is a probabilistic data structure that allows fast search within an ordered sequence of elements
   2. skip list allows O(log n) search complexity as well as O(log n) insertion complexity within an ordered sequence of n elements
-  3. skip list is a data structure that allows fast search within an ordered sequence of elements
+  3. skip list is a data structure that allows fast search within an ordered sequence of elements.
+  4. a weirdly simple data structure that allows O(log n) search complexity as well as O(log n) insertion complexity within an ordered sequence of n elements.
+  5. with i'th node having 2i-1 pointers to next node in the list.
+
   
 
 ## Codes covered
