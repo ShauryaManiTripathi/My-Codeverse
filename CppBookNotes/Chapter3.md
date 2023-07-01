@@ -1,6 +1,15 @@
 # Linked Lists...............
 ## Special points
 - linked lists-(singly,doubly,circular and variations)
+- stack and queue
+- Questions
+  1. implement stack and queue using linked list
+  2. find k'th element from last in linked list
+     - SOLUTION
+     three approaches->>>
+       1. using hash table
+       2. using two start-->end traversals
+       3. using two pointers, starting 2nd pointer after first has moved k-1 times
 - circular linked lists are used in OS for data handling
 - A memory efficient doubly linked list using single exOR(prev^next)pointer
 - unrolled linked list with sqrt(n) in each (list node)
