@@ -9,7 +9,13 @@
   3. if we store sqrt(n) in each list node, it helps in searching any node in O(sqrt(n))
   4. inserting is little tedious, as we might need to shift all contents to next blocks
   5. still its a fast method ,with better space and time management(with uniform data unit distribution in each block)
+  6. code to impliment unrolled linked list is in the book
+- skip list
+  1. skip list is a probabilistic data structure that allows fast search within an ordered sequence of elements
+  2. skip list allows O(log n) search complexity as well as O(log n) insertion complexity within an ordered sequence of n elements
+  3. skip list is a data structure that allows fast search within an ordered sequence of elements
   
+
 ## Codes covered
 - [Singly Linked List](#singly-linked-list)
 - [Doubly Linked List](#doubly-linked-list)
