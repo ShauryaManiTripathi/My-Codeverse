@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "name": "Meteor Litematica Printer",
+  "id": "meteor-litematica-printer",
+  "version": "${version}",
+  "description": "Fast printer for litematica made with meteor.",
+  "authors": [
+    "kkllffaa"
+  ],
+  "contact": {
+    "repo": "https://github.com/kkllffaa/meteor-litematica-printer"
+  },
+  "icon": "assets/meteor_litematica_printer/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "meteor": [
+      "com.kkllffaa.meteor_litematica_printer.Addon"
+    ]
+  },
+  "depends": {
+    "java": ">=17",
+    "minecraft": "1.20.x",
+    "meteor-client": ">=0.5.0"
+  }
+}
