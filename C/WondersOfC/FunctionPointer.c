@@ -16,4 +16,3 @@ int main(){
     int (*g)(int a,int b)=sub;
     printf("%d",fp(sub)(1,2));
 }
-
