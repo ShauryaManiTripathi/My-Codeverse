@@ -16,7 +16,7 @@
                 Node* slow=head;
                 Node* fast=head;
                 //while(fast && fast->next)
-                while(fast!=nullptr && fast->n ext!=nullptr){
+                while(fast!=nullptr && fast->next!=nullptr){
                 slow=slow->next;
                 fast=fast->next->next;
                 }
@@ -86,7 +86,135 @@
            }
            //how does moving slow pointer at head,then starting the slow and fast to move together makes them meet at loop's head  
            ```
-  4. find the length of loop in the looped 
+  4. find whether the list is looped or not, if looped ,find length of loop.
+  5. reverse the list
+     - SOLUTION
+        1. two approaches:-
+            ```cpp
+            //reverse singly linked list
+            //iterative approach
+            void reverse(Node* head){
+                Node* prev=nullptr;
+                Node* curr=head;
+                Node* next=nullptr;
+                while(curr!=nullptr){
+                    next=curr->next;
+                    curr->next=prev;
+                    prev=curr;
+                    curr=next;
+                }
+                head=prev;
+            }
+            ```
+            ```cpp
+            //recursive approach
+            void reverse(Node *head,Node curr,Node prev){
+                if(curr==nullptr){
+                    *head=prev;
+                    return;
+                }
+                Node* next=curr->next;
+                curr->next=prev;
+                reverse(head,next,curr);
+            }
+            ```
+            ```cpp
+            //another recursive approach, more intuitive
+            Node reverse(Node head){
+                if(head==NULL || head->next==NULL)
+                return head;
+                Node secondEle=head->next;
+                //Unlink and rev link
+                head->next=NULL;
+                Node reverseRest=reverse(secondEle);
+                secondEle->next=head;
+                return reverseRest;
+            }
+            ```
+  6. Find common intersection of two linked lists with known head.
+      - SOLUTION
+         1. two approaches:-
+            ```cpp
+            //find intersection of two linked lists
+            //brute force
+            void findIntersection(Node* head1,Node* head2){
+                Node* temp1=head1;
+                Node* temp2=head2;
+                while(temp1!=nullptr){
+                    while(temp2!=nullptr){
+                        if(temp1==temp2){
+                            cout<<"intersection found";
+                            return;
+                        }
+                        temp2=temp2->next;
+                    }
+                    temp1=temp1->next;
+                }
+                cout<<"intersection not found";
+            }
+            //complexity=O(mn);
+            ```
+            ```cpp
+            //using hash table
+            //solving it using sorted array fails, as many intersections point can exists
+            void findIntersection(Node* head1,Node* head2){
+                unordered_set<Node*> s;
+                Node* temp1=head1;
+                Node* temp2=head2;
+                while(temp1!=nullptr){
+                    s.insert(temp1);
+                    temp1=temp1->next;
+                }
+                while(temp2!=nullptr){
+                    if(s.find(temp2)!=s.end()){
+                        cout<<"intersection found";
+                        return;
+                    }
+                    temp2=temp2->next;
+                }
+                cout<<"intersection not found";
+            }
+            ```
+            ```cpp
+            //using two start-->end traversals
+            //find length of both lists, then find difference in length, then start traversing from the node where the difference is found
+            //complexity=O(m+n)
+            void findIntersection(Node* head1,Node* head2){
+                Node* temp1=head1;
+                Node* temp2=head2;
+                int len1=0,len2=0;
+                while(temp1!=nullptr){
+                    len1++;
+                    temp1=temp1->next;
+                }
+                while(temp2!=nullptr){
+                    len2++;
+                    temp2=temp2->next;
+                }
+                int diff=abs(len1-len2);
+                if(len1>len2){
+                    temp1=head1;
+                    temp2=head2;
+                }
+                else{
+                    temp1=head2;
+                    temp2=head1;
+                }
+                while(diff--){
+                    temp1=temp1->next;
+                }
+                while(temp1!=nullptr && temp2!=nullptr){
+                    if(temp1==temp2){
+                        cout<<"intersection found";
+                        return;
+                    }
+                    temp1=temp1->next;
+                    temp2=temp2->next;
+                }
+                cout<<"intersection not found";
+            }
+            ```
+           
 - circular linked lists are used in OS for data handling
 - A memory efficient doubly linked list using single exOR(prev^next)pointer
 - unrolled linked list with sqrt(n) in each (list node)
