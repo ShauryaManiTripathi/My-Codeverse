@@ -10,6 +10,8 @@ return a-b;
 f fp(f test){
 return test==add?sub:add;
 }
+//add=pointer of add function
+//add(1,3)=proper function call
 int main(){
     int (*g)(int a,int b)=sub;
     printf("%d",fp(sub)(1,2));
