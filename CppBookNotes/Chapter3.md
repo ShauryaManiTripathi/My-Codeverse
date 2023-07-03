@@ -255,7 +255,7 @@ Note :- I have already explored all problems myself ,and the solutions available
                         }
                         else{
                             temp1=temp1->next;
-                        }
+                         }
                         if(temp2==nullptr){
                             temp2=head1;
                         }
