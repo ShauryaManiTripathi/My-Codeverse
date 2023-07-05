@@ -1,8 +1,5 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include<string.h>
-#include<math.h>
-#include<limits.h>
 int compare(const void* a,const void* b){
     return *(int*)a-*(int*)b;
 }

@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 typedef int (*f)(int a,int b);
+typedef int ff(int a,int b);
 int add(int a, int b){
 return a+b;
 }
@@ -14,5 +15,5 @@ return test==add?sub:add;
 //add(1,3)=proper function call
 int main(){
     int (*g)(int a,int b)=sub;
-    printf("%d",fp(sub)(1,2));
+    printf("%d",fp(add)(1,2));
 }
