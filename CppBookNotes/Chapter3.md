@@ -352,6 +352,33 @@ Note :- I have already explored all problems myself ,and the solutions available
                     }
                 }
                 ```
+    11. Reverse the linked list first in pairs and as well of groups of k nodes.
+    12. split linked list in two, if odd,then extra one node in list A.
+        - SOLUTION
+            ```cpp
+            //using two pointers
+            //complexity=O(n)
+            void splitlist(Node head,Node *head1,Node *head2){
+                Node slow,fast=head;
+                if(head==NULL || head->next=NULL){
+                    *head1=head;
+                    *head2=NULL;
+                }
+                fast=fast->next;
+                //fast advanced by one to avoid bad posiiton of middle  in even node list since we have to stop just before middle
+                while(fast!=NULL){
+                    fast=fast->next;
+                    if(fast!=NULL){
+                        fast=fast->next;
+                        slow=slow->next;
+                    }
+                }
+                *head1=head;
+                *head2=slow->next;
+                
+            }
+            ```
+    13. 
     
                 
 
