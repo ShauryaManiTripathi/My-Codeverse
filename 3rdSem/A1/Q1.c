@@ -19,6 +19,18 @@ int precedence(char temp){
     }
 }
 
+int associativity(char temp){
+    switch(temp){
+     case '+':
+     case '-':
+     case '*':
+     case '/':
+     return 1;
+     default:
+     return 0;
+    }
+}
+
 char *getstring(){
     char buffer[10000];
     scanf("%[^\n]s",buffer);
@@ -61,8 +73,42 @@ int main(){
         printf("%d,",terms[i]);
     }
     puts("");
-    puts("Its eassysyy from here but lack of time\n\n I will take care from next time ");
-    
+    while(count){
+        int OPpoint=0;
+        for(int i=0;i<count;i++){
+           if(associativity(operand[OPpoint])){
+            if(precedence(operand[OPpoint])<precedence(operand[i]))
+            OPpoint=i;
+           }
+           else{
+            if(precedence(operand[OPpoint])<=precedence(operand[i]))
+            OPpoint=i;
+           }
+        }
+        printf("OPpoint--%d\nOPerand--%c\n",OPpoint,operand[OPpoint]);
+        int temp;
+        switch(operand[OPpoint]){
+            case '+':temp=terms[OPpoint]+terms[OPpoint+1];
+            break;
+            case '-':temp=terms[OPpoint]-terms[OPpoint+1];
+            break;
+            case '*':temp=terms[OPpoint]*terms[OPpoint+1];
+            break;
+            case '/':temp=terms[OPpoint]/terms[OPpoint+1];
+            break;
+            case '^':temp=pow((double)terms[OPpoint],(double)terms[OPpoint+1]);
+            break;
+            default: exit(0);
+        }
+        printf("Test::%d\n",temp);
+        terms[OPpoint]=temp;
+        for(int i=OPpoint;i<count;i++){
+            operand[i]=operand[i+1];
+            terms[i+1]=terms[i+2];
+        }
+        count--;
+    }
+    printf("Answer::%d",terms[0]);
     
 
 
