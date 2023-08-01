@@ -32,6 +32,7 @@ void mergee(int *arr,int left,int mid,int right){
     free(L);
     free(R);
 }
+//oo
 void mergesort(int *arr, int low, int high){
     if(low<high){
         int mid = (low+high)/2;
