@@ -32,6 +32,7 @@ int associativity(char temp){
 }
 
 char *getstring(){
+    fflush(stdin);
     char buffer[10000];
     scanf("%[^\n]s",buffer);
     int n=strlen(buffer);
@@ -39,6 +40,8 @@ char *getstring(){
     strcpy(infix,buffer);
     return infix;
 }
+
+
 
 
 int main(){
@@ -108,12 +111,8 @@ int main(){
         }
         count--;
     }
+    infix=getstring();
     printf("Answer::%d",terms[0]);
-    
-
-
-
-
 }
 
 
