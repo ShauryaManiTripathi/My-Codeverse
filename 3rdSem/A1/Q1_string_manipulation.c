@@ -41,7 +41,16 @@ char *getstring(){
     return infix;
 }
 
-
+int BinaryEvaluator(int a,int b,char c){
+    switch(c){
+            case '+':return a+b;
+            case '-':return a-b;
+            case '*':return a*b;
+            case '/':return a/b;
+            case '^':return (int)pow((double)a,(double)b);
+            default: exit(0);
+        }
+}
 
 
 int main(){
@@ -89,7 +98,7 @@ int main(){
            }
         }
         printf("OPpoint--%d\nOPerand--%c\n",OPpoint,operand[OPpoint]);
-        int temp;
+        int temp=BinaryEvaluator(terms[OPpoint],terms[OPpoint+1],operand[OPpoint]);
         switch(operand[OPpoint]){
             case '+':temp=terms[OPpoint]+terms[OPpoint+1];
             break;
