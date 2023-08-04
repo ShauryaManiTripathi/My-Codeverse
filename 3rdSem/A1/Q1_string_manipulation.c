@@ -99,19 +99,19 @@ int main(){
         }
         printf("OPpoint--%d\nOPerand--%c\n",OPpoint,operand[OPpoint]);
         int temp=BinaryEvaluator(terms[OPpoint],terms[OPpoint+1],operand[OPpoint]);
-        switch(operand[OPpoint]){
-            case '+':temp=terms[OPpoint]+terms[OPpoint+1];
-            break;
-            case '-':temp=terms[OPpoint]-terms[OPpoint+1];
-            break;
-            case '*':temp=terms[OPpoint]*terms[OPpoint+1];
-            break;
-            case '/':temp=terms[OPpoint]/terms[OPpoint+1];
-            break;
-            case '^':temp=pow((double)terms[OPpoint],(double)terms[OPpoint+1]);
-            break;
-            default: exit(0);
-        }
+        // switch(operand[OPpoint]){
+        //     case '+':temp=terms[OPpoint]+terms[OPpoint+1];
+        //     break;
+        //     case '-':temp=terms[OPpoint]-terms[OPpoint+1];
+        //     break;
+        //     case '*':temp=terms[OPpoint]*terms[OPpoint+1];
+        //     break;
+        //     case '/':temp=terms[OPpoint]/terms[OPpoint+1];
+        //     break;
+        //     case '^':temp=pow((double)terms[OPpoint],(double)terms[OPpoint+1]);
+        //     break;
+        //     default: exit(0);
+        // }
         printf("Test::%d\n",temp);
         terms[OPpoint]=temp;
         for(int i=OPpoint;i<count;i++){
