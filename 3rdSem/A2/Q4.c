@@ -7,31 +7,40 @@
 void merge2(int *a,int l,int mid,int r){
     int n1=mid-l+2;
     int n2=r-mid+1;
+   // printf("%d %d\n",n1,n2);
     int a1[n1];
     int a2[n2];
     for(int i=0;i<n1-1;i++){
     a1[i]=a[l+i];
+   // printf("%d--",a1[i]);
     }
+   // puts("");
     a1[n1-1]=__INT32_MAX__;
     for(int i=0;i<n2-1;i++){
     a2[i]=a[mid+1+i];
+    //printf("%d--",a2[i]);
     }
+   // puts("");
     a2[n2-1]=__INT32_MAX__;
     int ii=0,jj=0;
+    //puts("sorted");
     for(int i=0;i<n1+n2-2;i++){
         if(a1[ii]<a2[jj]){
-            a[l+i]=a[ii];
+            a[l+i]=a1[ii];
+           // printf("%d--",a[l+i]);
             ii++;
         }
         else{
-            a[l+i]=a[jj];
+            a[l+i]=a2[jj];
+           // printf("%d--",a[l+i]);
             jj++;
         }
+       // puts("");
     }
 
 }
 
-void merge4(int *a,int l,int *mid,int midsize,int r){
+void merge4(int *a,int l,int *mid,int r){
     int n1=mid[0]-l+2;
     int n2=mid[1]-mid[0]+1;      
     int n3=mid[2]-mid[1]+1;
@@ -42,15 +51,15 @@ void merge4(int *a,int l,int *mid,int midsize,int r){
     }
     a1[n1-1]=__INT32_MAX__;
     for(int i=0;i<n2-1;i++){
-        a2[i]=a[mid[0]+i];
+        a2[i]=a[mid[0]+1+i];
     }
     a2[n2-1]=__INT32_MAX__;
     for(int i=0;i<n3-1;i++){
-        a3[i]=a[mid[1]+i];
+        a3[i]=a[mid[1]+1+i];
     }
     a3[n3-1]=__INT32_MAX__;
     for(int i=0;i<n4-1;i++){
-        a4[i]=a[mid[2]+i];
+        a4[i]=a[mid[2]+1+i];            
     }
     a4[n4-1]=__INT32_MAX__;
 
@@ -64,7 +73,7 @@ void merge4(int *a,int l,int *mid,int midsize,int r){
                 max=i;
             }
         }
-        a[j]=arrays[max][pointer[max]];
+        a[l+j]=arrays[max][pointer[max]];
         pointer[max]++;
     }
 
@@ -86,7 +95,7 @@ void mergesort4(int *a,int l,int r){
         mergesort4(a,mid[0]+1,mid[1]);
         mergesort4(a,mid[1]+1,mid[2]);
         mergesort4(a,mid[2]+1,r);
-        //merge4(a,l,mid,3,r);
+        merge4(a,l,mid,r);
     }
 }
 
@@ -99,7 +108,10 @@ int main(){
     for(int i=0;i<n;i++){
         scanf("%d",a+i);
     }
-    printf("mellow:::%d",printf("hello::%d\n",scanf("%d",&n)));
-    //mergesort2(a,0,n-1);
+    //printf("mellow:::%d",printf("hello::%d\n",scanf("%d",&n)));
+    mergesort4(a,0,n-1);
+     for(int i=0;i<n;i++){
+        printf("%d ",a[i]);
+    }
     
 }
