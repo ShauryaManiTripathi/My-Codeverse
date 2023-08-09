@@ -35,4 +35,6 @@ int main(){
 
     printf("Index:::%d\n",SkewBinarySearch(a,n,0,key,num,den));
     puts("if returned index is -1,implies the element was never found in the array");
+    free(a);
+    a=NULL;
 }

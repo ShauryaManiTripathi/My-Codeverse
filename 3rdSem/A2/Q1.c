@@ -17,6 +17,8 @@ void check(){
     else{
         printf("Maximum=%d,Minimum=%d",a[n-1],a[0]);
     }
+    free(a);
+    a=NULL;
 }
 
 int main(){

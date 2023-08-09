@@ -42,4 +42,6 @@ int main(){
 
     printf("Index:::::%d\n",TernarySearch(a,key,0,n-1));
     puts("if returned index is -1,implies the element was never found in the array");
+    free(a);
+    a=NULL;
 }
