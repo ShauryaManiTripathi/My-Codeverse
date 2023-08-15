@@ -55,12 +55,14 @@ void merge4(int *a,int l,int *mid,int r){
     a4[n4-1]=__INT32_MAX__;
 
     int pointer[4]={0,0,0,0};
+   // int pointermaxval[4]={n1-1,n2-1,n3-1,n4-1};
     int *arrays[4]={a1,a2,a3,a4};
 
     for(int j=0;j<n1+n2+n3+n4-4;j++){
         int max=0;
         for(int i=1;i<4;i++){
             if(arrays[i][pointer[i]]<arrays[max][pointer[max]]){
+               // if(pointer[i]<pointermaxval[i])
                 max=i;
             }
         }
@@ -89,7 +91,6 @@ void mergesort4(int *a,int l,int r){
         merge4(a,l,mid,r);
     }
 }
-
 
 
 int main(){

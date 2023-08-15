@@ -1,3 +1,23 @@
+    1. [Initialization](#initialization)
+    2. [Cleanup](#cleanup)
+    3. [Method Overloading](#method-overloading)
+    4. [Default Constructor](#default-constructor)
+    5. [this Keyword](#this-keyword)
+    6. [Calling Constructors from Constructors](#calling-constructors-from-constructors)
+    7. [Static Data Initialization](#static-data-initialization)
+    8. [Explicit Static Initialization](#explicit-static-initialization)
+    9. [Arrays of Objects](#arrays-of-objects)
+    10. [Varargs](#varargs)
+    11. [Enum](#enum)
+    12. [Finalize()](#finalize)
+    13. [Garbage Collection](#garbage-collection)
+    14. [Termination Condition](#termination-condition)
+    15. [The finalize() Method](#the-finalize-method)
+    16. [Summary](#summary)
+    17. [Exercises](#exercises)
+    18. [Project: Overloading](#project-overloading)
+    19. [Project: Documentation1](#project-documentation1)
+    20. [Project: Documentation2](#project-documentation2)
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
