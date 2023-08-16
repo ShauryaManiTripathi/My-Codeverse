@@ -26,7 +26,7 @@ public class Question5 {
                 arr) {
             System.out.print(element+" ");
         }
-       // System.out.println("\nDisplaying done successfully");
+        System.out.println("");
     }
     public void reversecontent(){
         System.out.println("Reversing array content....");
