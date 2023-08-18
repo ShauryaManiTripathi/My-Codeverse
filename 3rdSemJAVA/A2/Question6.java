@@ -42,11 +42,16 @@ public class Question6 {
         System.out.println(isPan?"Pangram":"Not Pangram");
     }
 
+    void closeINPUT(){
+        input.close();
+    }
+
     public static void main(String[] args){
         Question6 object=new Question6();
         object.getLongestWord();
         System.out.println("The longest word is "+object.longestWord);
         object.isPangram();
+        object.closeINPUT();
     }
 
 

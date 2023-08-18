@@ -51,5 +51,6 @@ public class Question5 {
         object.displaycontent();
         object.reversecontent();
         object.displaycontent();
+        input.close();
     }
 }

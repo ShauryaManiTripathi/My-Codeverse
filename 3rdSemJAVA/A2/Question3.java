@@ -18,5 +18,6 @@ public class Question3 {
             }
         }
         System.out.println("The fact that the given array is palindrome is "+ispalindrome);
+        input.close();
     }
 }

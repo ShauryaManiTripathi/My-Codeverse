@@ -12,10 +12,6 @@ public class Question2 {
         }
         int freq;
         boolean[] arr2=new boolean[temp];
-        for (boolean element :
-                arr2) {
-            element=false;
-        }
         for (int i = 0; i < temp; i++) {
             freq=0;
             if(arr2[i]==false) {
@@ -28,5 +24,6 @@ public class Question2 {
                 System.out.println("The Element " + arr[i] + " has " + freq + " repititions");
             }
         }
+        input.close();
     }
 }

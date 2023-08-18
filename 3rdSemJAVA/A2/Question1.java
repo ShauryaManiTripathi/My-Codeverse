@@ -17,6 +17,7 @@ public class Question1 {
             sum+=element;
         }
         System.out.println("The sum of array elements is "+ sum);
+        input.close();
     }
 
 }

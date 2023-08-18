@@ -16,5 +16,6 @@ public class Question4IfElse {
         else {
             System.out.println("No, " + int2 + " cant divide " + int1);
         }
+        input.close();
     }
 }

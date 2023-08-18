@@ -23,5 +23,6 @@ public class Question4Ternary {
                                     ("Cant divide by zero")
                     )
             );
+            input.close();
     }
 }
