@@ -136,6 +136,22 @@ public class FirstJavaProgram {
 
 ### and much more...........
 
+## The `private` keyword
+- The `private` keyword is an access modifier.
+- The `private` keyword is used to declare a class as private.
+- The `private` keyword is used to declare a method as private.
+- The `private` keyword is used to declare a field as private.
+- The `private` keyword is used to declare a constructor as private.
+- The `private` keyword is used to declare an interface as private.
+- The `private` keyword is used to declare an enumeration as private.
+- The `private` keyword is used to declare an annotation as private.
+- The `private` keyword is used to declare a package as private.
+- The scope of `private` is within the class only.
+- The `private` keyword is used to hide the data.
+- The `private` keyword is used to achieve encapsulation.
+- The `private` keyword is used to achieve data hiding.
+
+
 
 
 
