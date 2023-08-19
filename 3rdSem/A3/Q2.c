@@ -4,7 +4,8 @@
 #include<ctype.h>
 #include<limits.h>
 #include<math.h>
-
+// find missing number between 1 to n+1 where n is size of array containing 
+// 1 to n+1 nums with one missing in ascending order
 int find_Missing_Number(int *a,int l,int r){
     if(l<r){
         int mid=(l+r)/2;
