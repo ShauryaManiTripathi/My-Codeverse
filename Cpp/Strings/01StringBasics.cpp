@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
+
 int main() {
    //String Init
    string s0;
@@ -12,12 +13,13 @@ int main() {
    string s4 = s3;
    char a[] = {'a', 'b', 'c','\0'};
    string s5(a);
-cout<<s0<<endl;
-cout<<s1<<endl;
-cout<<s2<<endl;
-cout<<s3<<endl;
-cout<<s4<<endl;
-cout<<s5<<endl;
+   cout<<s0<<endl;
+   cout<<s1<<endl;
+   cout<<s2<<endl;
+   cout<<s3<<endl;
+   cout<<s4<<endl;
+   cout<<s5<<endl;
+   cout<<s5[1]<<endl;
 
    if(s0.empty()){
    cout<<"s0 is an empty string"<<endl;
