@@ -21,6 +21,5 @@ int find_Missing_Number(int *a,int l,int r){
 
 int main(){
     int a[10]={2,3,4,5,6,7,8,9,10,11};
-    printf("%d",find_Missing_Number(a,0,9));
-    
+    printf("%d\n",find_Missing_Number(a,0,9));
 }

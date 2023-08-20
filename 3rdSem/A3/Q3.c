@@ -20,14 +20,14 @@ int findMaxProd(int *a,int size){
         int cand1=findMaxProd(a,size1);
         int cand2=findMaxProd(a+size1,size-size1);
         //////////////////
-        int max1=INT_MIN,min1=INT_MAX,cur1=1;
+        int max1=a[size1-1],min1=a[size1-1],cur1=1;
         for(int i=size1-1;i>=0;i--){
             cur1*=a[i];
             if(cur1>max1)max1=cur1;
             if(cur1<min1)min1=cur1;
         }
         ///////////////////
-        int max2=INT_MIN,min2=INT_MAX,cur2=1;
+        int max2=a[size1],min2=a[size1],cur2=1;
         for(int i=size1;i<size;i++){
             cur2*=a[i];
             if(cur2>max2)max2=cur2;
@@ -38,6 +38,6 @@ int findMaxProd(int *a,int size){
     }
 }
 int main(){
-int a[10]={-100,-100,0,0,0,0,0,0,10,11};
+int a[10]={-100,-100,0,0,100000,-1,0,0,10,11};
     printf("%d",findMaxProd(a,10));
 }

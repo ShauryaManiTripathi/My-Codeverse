@@ -8,11 +8,11 @@ using namespace std;
 // on the first call function should be passed with string argument for 's'
 // on subsequent calls we should pass the string argument as null
 
-char * mystrtok(char *s,char delim){//going to choose a character for deliminator, we can use a string too.....
+char * mystrtok(char *ss,char delim){//going to choose a character for deliminator, we can use a string too.....
     static char* input=NULL;
-    if(s!=NULL){//If input is not null, then only we are goign to initialize oterwise the input will retain state from prev function call
+    if(ss!=NULL){//If input is not null, then only we are goign to initialize oterwise the input will retain state from prev function call
         //we are making first call
-        input=s;
+        input=ss;
     }
     //base case
     if(input==NULL)return NULL; 
@@ -38,6 +38,7 @@ char * mystrtok(char *s,char delim){//going to choose a character for deliminato
 int main() {
 
     char s[100] = "Today is a rainy day";
+    char ss[100] = "Tomarrow isn't a sunny night";
 
     char *ptr=strtok(s," ");
     cout<<ptr<<endl;
@@ -47,18 +48,18 @@ int main() {
     //it maintains a static array
     while(ptr!=NULL){
     ptr=strtok(NULL," ");
-    cout<<ptr<<endl;}
-
+    cout<<(ptr==NULL?"":ptr)<<endl;}
+    //cout<<(char *)NULL<<endl;
     //own custom tokensizer
-    char *p=mystrtok(s,' ');
-    cout<<p<<endl;
+    char *pr=mystrtok(ss,' ');
+    cout<<pr<<endl;
     
     //it copies the char array and returns the first token
     //to get next tokens, we shoudl pass NULL
     //it maintains a static array
-    while(p!=NULL){
-        p=mystrtok(NULL,' ');
-        cout<<p<<endl;
+    while(pr!=NULL){
+        pr=mystrtok(NULL,' ');
+        cout<<pr<<endl;
     }
 
 }
