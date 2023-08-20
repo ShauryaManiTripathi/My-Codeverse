@@ -1,7 +1,7 @@
-
 #include <iostream>
 #include <cstring>
 using namespace std;
+
 
 //char *strtok (char *s, char *delimiters)
 // returns a token on each subsequent call
@@ -39,6 +39,8 @@ int main() {
 
     char s[100] = "Today is a rainy day";
     char ss[100] = "Tomarrow isn't a sunny night";
+    cin.getline(s,100,'\n');
+    cin.getline(ss,100,'\n');
 
     char *ptr=strtok(s," ");
     cout<<ptr<<endl;
