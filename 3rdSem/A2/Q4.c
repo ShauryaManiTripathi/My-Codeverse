@@ -31,6 +31,27 @@ void merge2(int *a,int l,int mid,int r){
 
 }
 
+void merge4v2(int *a,int l,int *mid,int r){
+    int totalsize=r-l+1;
+    int temp[r-l+1];
+    int pointer[4]={l,mid[0]+1,mid[1]+1,mid[2]+1};
+    int pointermax[4]={mid[0],mid[1],mid[2],r};
+    for(int i=0;i<totalsize;i++){
+                                int max=0;                                      ///
+                                for(int j=1;j<4;j++){                           ///
+                                    if(pointer[j]<=pointermax[j]){              ///
+                                        if(a[pointer[j]]<a[pointer[max]]){      ///
+                                            max=j;                              ///
+                                        }                                       ///
+                                    }                                           ///
+                                }
+        temp[i]=a[pointer[max]];
+        pointer[max]++;
+    }
+    for(int i=0;i<totalsize;i++)
+    a[l+i]=temp[i];
+}
+
 void merge4(int *a,int l,int *mid,int r){
     int n1=mid[0]-l+2;
     int n2=mid[1]-mid[0]+1;      
