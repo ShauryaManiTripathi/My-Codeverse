@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Song",
+            "request": "launch",
+            "mainClass": "Song",
+            "projectName": "VScode_154541fc"
+        },
+        {
+            "type": "java",
             "name": "Question2",
             "request": "launch",
             "mainClass": "Question2",
