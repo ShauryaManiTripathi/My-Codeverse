@@ -66,7 +66,7 @@ void mergesort_universal(void *a,int l,int r,int BYTES,comparator compare){
     int mid=(l+r)/2;
     mergesort_universal(a,l,mid,BYTES,compare);
     mergesort_universal(a,mid+1,r,BYTES,compare);
-    o2n(l,r);
+    //o2n(l,r);
     merge_universal(a,l,mid,r,BYTES,compare);
 }
 
