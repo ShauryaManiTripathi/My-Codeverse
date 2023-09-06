@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Question2",
+            "request": "launch",
+            "mainClass": "Question2",
+            "projectName": "VScode_154541fc"
+        },
+        {
+            "type": "java",
+            "name": "Question1",
+            "request": "launch",
+            "mainClass": "Question1",
+            "projectName": "VScode_154541fc"
+        },
+        {
+            "type": "java",
             "name": "Song",
             "request": "launch",
             "mainClass": "Song",

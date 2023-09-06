@@ -1,0 +1,4 @@
+- a sequence of stuff
+- with obj file that contains offsets of the all compile time allocated memory wrt to original address
+- advantage _>> fast and easy
+- disadvantage _>> 
