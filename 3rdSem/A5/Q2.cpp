@@ -20,7 +20,7 @@ int medianFinder(int l,int r,int *arr){
 
 int selectgrp(int *arr,int l,int r,int k,int grp){
     int size=r-l+1;
-    if(l==r and k==1)return arr[l];         comparisons++;comparisons++;          
+    if(l==r and k==1)return arr[l];         comparisons+=3;          
     int newsize=(size+grp-1)/grp;   
     int temp[newsize];
     {
@@ -49,7 +49,7 @@ int selectgrp(int *arr,int l,int r,int k,int grp){
         arr[PivotPos]=arr[PivotLeft+1];
         arr[PivotLeft+1]=temp;
     }
-                                            comparisons++;                                             
+                                            comparisons+=2;                                             
     if(leftcount==k-1)return arr[PivotLeft+1];
     else if(leftcount>k-1)return selectgrp(arr,l,PivotLeft,k,grp);
     else return selectgrp(arr,PivotLeft+2,r,k-leftcount-1,grp);
