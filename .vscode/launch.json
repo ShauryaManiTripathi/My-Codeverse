@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ArrayL",
+            "request": "launch",
+            "mainClass": "ArrayL",
+            "projectName": "VScode_154541fc"
+        },
+        {
+            "type": "java",
+            "name": "StudentManagement",
+            "request": "launch",
+            "mainClass": "StudentManagement",
+            "projectName": "VScode_154541fc"
+        },
+        {
+            "type": "java",
             "name": "Question2",
             "request": "launch",
             "mainClass": "Question2",
