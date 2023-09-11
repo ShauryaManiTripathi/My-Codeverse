@@ -84,5 +84,6 @@ public class ArrayL {
             }
         }
         while(running);
+        scn.close();
     }
 }
