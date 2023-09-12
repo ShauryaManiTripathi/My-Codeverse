@@ -16,7 +16,7 @@ int main()
             if(i==0 || j==0)
                 DPtable[i][j] = 0;
             else if(weights[i-1] <= j)
-                DPtable[i][j] = max(weights[i-1] + DPtable[i-1][j-weights[i-1]], DPtable[i-1][j]);
+                DPtable[i][j] = max( weights[i-1] + DPtable[i-1][j-weights[i-1]], DPtable[i-1][j]);
             else
                 DPtable[i][j] = DPtable[i-1][j];
         }
