@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "BankManagement",
+            "request": "launch",
+            "mainClass": "BankManagement",
+            "projectName": "VScode_154541fc"
+        },
+        {
+            "type": "java",
             "name": "ArrayL",
             "request": "launch",
             "mainClass": "ArrayL",

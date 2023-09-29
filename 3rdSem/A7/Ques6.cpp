@@ -55,27 +55,30 @@ int selectgrp(int *arr,int l,int r,int k,int grp){
     else return selectgrp(arr,PivotLeft+2,r,k-leftcount-1,grp);
 }
 
-int main(){
+int FindLargestViaCustomBinary(int *arr,int l,int r,int END_INDEX){
+    if(l==r)return arr[l];
+    int mid=(l+r)/2;
+    if(arr[mid]>arr[mid+1])return mid;
+    else{
+        if(arr[mid]>=arr[END_INDEX]){
+            return FindLargestViaCustomBinary(arr,mid+1,r,END_INDEX);
+        }
+        else{
+            return FindLargestViaCustomBinary(arr,l,mid,END_INDEX);
+        }
+    }
+}
+
+int main(int argc, char const *argv[])
+{
     int n;
-    cin>>n;
-    n=10000;
-    int arr1[n],arr2[n],arr3[n],arr4[n];
-    srand(time(0));
+    int arr[n];
     for (int i = 0; i < n; i++)
     {
-        cin>>arr1[i];
-        arr1[i]=rand()%1000000+98435;
-        arr4[i]=arr3[i]=arr2[i]=arr1[i];
+        cin>>arr[i];
     }
-    cout<<endl<<"Note:- The comparisons are those added by user,internal comparisons are not included!"<<endl;
-    cout<<selectgrp(arr1,0,n-1,6*n/10,3)<<", comparisons required -----> "<<comparisons<<"\tfor group size =3"<<endl;
-    comparisons=0;
-    cout<<selectgrp(arr2,0,n-1,6*n/10,5)<<", comparisons required -----> "<<comparisons<<"\tfor group size =5"<<endl;
-    comparisons=0;
-    cout<<selectgrp(arr3,0,n-1,6*n/10,7)<<", comparisons required -----> "<<comparisons<<"\tfor group size =7"<<endl;
-    comparisons=0;
-    cout<<selectgrp(arr4,0,n-1,6*n/10,9)<<", comparisons required -----> "<<comparisons<<"\tfor group size =9"<<endl;
-    sort(arr1,arr1+n);
-    cout<<arr1[6*n/10-1];
-
+    
+    cout<<FindLargestViaCustomBinary(arr,0,n-1,n-1)<<endl;
+    
+    return 0;
 }
