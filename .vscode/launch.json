@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Q2",
+            "request": "launch",
+            "mainClass": "A7a.Q2",
+            "projectName": "VScode_154541fc"
+        },
+        {
+            "type": "java",
+            "name": "Q1",
+            "request": "launch",
+            "mainClass": "A7a.Q1",
+            "projectName": "VScode_154541fc"
+        },
+        {
+            "type": "java",
+            "name": "Shaurya_2201184",
+            "request": "launch",
+            "mainClass": "Shaurya_2201184",
+            "projectName": "VScode_154541fc"
+        },
+        {
+            "type": "java",
             "name": "BankManagement",
             "request": "launch",
             "mainClass": "BankManagement",

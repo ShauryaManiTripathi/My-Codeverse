@@ -1,14 +1,10 @@
-import java.util.Scanner;
 public class Ques1 {
     public static void main(String[] args) {
-        Scanner scn=new Scanner(System.in);
-        String input = scn.nextLine();
-        int sum = addNumbersFromString(input);
+        int sum = addNumbersFromString(args);
         System.out.println("Sum of numbers: " + sum);
     }
 
-    public static int addNumbersFromString(String input) {
-        String[] parts = input.split(" ");
+    public static int addNumbersFromString(String[] parts) {
         int sum = 0;
         if(parts.length==1){
             System.out.println("No numbers entered");

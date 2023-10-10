@@ -43,7 +43,7 @@ int hellow(void *a,void *b){
 }
 
 int compare1(void *a,void *b){
-    return ((pair *)a)->x>=((pair *)b)->x?1:0;
+    return ((pair *)a)->x<=((pair *)b)->x?0:1;
 }
 
 void merge_universal(void *a,int l,int mid,int r,int BYTES,comparator compare){

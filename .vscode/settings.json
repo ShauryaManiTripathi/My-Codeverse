@@ -4,5 +4,6 @@
         "cmath": "cpp",
         "iostream": "cpp",
         "ostream": "cpp"
-    }
+    },
+    "java.debug.settings.onBuildFailureProceed": true
 }
