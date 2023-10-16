@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "q1",
+            "request": "launch",
+            "mainClass": "q1",
+            "projectName": "VScode_154541fc"
+        },
+        {
+            "type": "java",
             "name": "Q2",
             "request": "launch",
             "mainClass": "A7a.Q2",
