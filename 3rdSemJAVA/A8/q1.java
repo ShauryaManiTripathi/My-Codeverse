@@ -32,17 +32,30 @@ public class q1 {
             ArrayList<Student> students = new ArrayList<>();
     
             // Add 5 student objects to the ArrayList
-            students.add(new Student("Alice Smith", 102, "2000"));
-            students.add(new Student("Bob Johnson", 105, "1999"));
-            students.add(new Student("Charlie Brown", 103, "2001"));
-            students.add(new Student("David Lee", 101, "2002"));
-            students.add(new Student("Eve Miller", 104, "1998"));
+            students.add(new Student("Swayam NPTEL", 1, "2000"));
+            students.add(new Student("UP police", 2, "1999"));
+            students.add(new Student("Snehansu Depp", 3, "2001"));
+            students.add(new Student("David Lal", 4, "2002"));
+            students.add(new Student("Ama de armas", 5, "1998"));
+
+            int n;
+            System.out.println("Enter the number of xtra students you want to add...");
+            n = sc.nextInt();
+            for(int i=0;i<n;i++){
+                System.out.println("Enter the name of the student");
+                String name = sc.next();
+                System.out.println("Enter the roll number of the student");
+                int roll = sc.nextInt();
+                System.out.println("Enter the birthyear of the student");
+                String birthyear = sc.next();
+                students.add(new Student(name,roll,birthyear));
+            }
     
-            System.out.println("How would you like to sort the students?");
-            System.out.println("1) With respect to the first name");
-            System.out.println("2) With respect to the title");
-            System.out.println("3) In the reverse order of their roll number");
-            System.out.println("4) In the ascending order of their birthyear");
+            System.out.println("So sorting will be based on???");
+            System.out.println("1)first name");
+            System.out.println("2)title");
+            System.out.println("3)reverse order of their roll number");
+            System.out.println("4)ascending order of their birthyear");
     
             int choice = sc.nextInt();
     
@@ -68,7 +81,7 @@ public class q1 {
                     return;
             }
     
-            System.out.println("Sorted students:");
+            System.out.println("Sorted List:");
             for (Student student : students) {
                 System.out.println(student);
             }
