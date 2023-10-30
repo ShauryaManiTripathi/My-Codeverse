@@ -71,6 +71,7 @@ public class q1 {
                 case 3:
                     // Sort in reverse order of roll number
                     Collections.sort(students, Collections.reverseOrder(Comparator.comparingInt(s -> s.roll)));
+                    Collections.sort(students,Comparator.comparing(s -> s.roll));
                     break;
                 case 4:
                     // Sort in ascending order of birth year
