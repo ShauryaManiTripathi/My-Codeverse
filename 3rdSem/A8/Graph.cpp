@@ -77,7 +77,8 @@ class Graph_adjList
                 }
             }
             free(visited);
-        }
+        }    vector<list<int>> adjList;
+
         ////////////////////////////////////////////////////////////////////////////////LayerListMaker
         vector<list<int>> BFSLayerList(int s){
             bool *visited = new bool[adjList.size()];
@@ -263,7 +264,7 @@ class Graph_adjList
      *                                                                                                   
      *                                                                                                   
      * directed codes for only outward edge adjacencylist data structures
-     * will add a theory or probabily code for inward / outward edge adjacencylist data structures
+     * will add a theory or probabily code for inward / outward edge adjacency list data structures
      *        __  __     ____   _         ____                  __                              __
      *       / / / /__  / / /  (_)____   / __/___  _____   ____/ /__  ____ ___  ____  ___  ____/ /
      *      / /_/ / _ \/ / /  / / ___/  / /_/ __ \/ ___/  / __  / _ \/ __ `__ \/ __ \/ _ \/ __  / 
@@ -274,6 +275,179 @@ class Graph_adjList
     ////////////////////////////////////////////////////////////////////////////////ta ta ta...
     
 };
+class Graph_Competitive{
+    private:
+        vector<vector<pair<int,int>>> adjList;
+    public:
+        Graph_Competitive(int V){
+            adjList.resize(V);
+            for (int i = 0; i < V; i++)
+            {
+                while(1){
+                    int x;
+                    cin>>x;
+                    if(x==-1) break;
+                    int w;
+                    cin>>w;
+                    adjList[i].push_back(make_pair(x,w));
+                }
+            }
+        cout<<"Graph Created"<<endl;
+        }
+        void printGraph(){
+            for (int i = 0; i < adjList.size(); i++)
+            {
+                cout<<i<<"->";
+                for(auto j = adjList[i].begin(); j!=adjList[i].end(); j++){
+                    cout<<"("<<j->first<<","<<j->second<<") ";
+                }
+                cout<<endl;
+            }
+        }
+        void addEdge(int u, int v, int w){
+            adjList[u].push_back(make_pair(v,w));
+        }
+        void removeEdge(int u, int v){
+            for (int i = 0; i < adjList[u].size(); i++)
+            {
+                if(adjList[u][i].first==v){
+                    adjList[u].erase(adjList[u].begin()+i);
+                }
+            }
+        }
+        void removeVertex(int u){
+            for (int i = 0; i < adjList.size(); i++)
+            {
+                for (int j = 0; j < adjList[i].size(); j++)
+                {
+                    if(adjList[i][j].first==u){
+                        adjList[i].erase(adjList[i].begin()+j);
+                    }
+                }
+            }
+            adjList[u].clear();
+        }
+        void addVertex(){
+            adjList.resize(adjList.size()+1);
+        }
+        
+
+        void Dijkstra(int s){
+            vector<int> dist(adjList.size(),__INT_MAX__);
+            vector<bool> visited(adjList.size(),false);
+            dist[s] = 0;
+            for (int i = 0; i < adjList.size(); i++)
+            {
+                int u = minDistance(dist,visited);
+                visited[u] = true;
+                for(auto j = adjList[u].begin(); j!=adjList[u].end(); j++){
+                    if(!visited[j->first] && dist[u]!=__INT_MAX__ && dist[u]+j->second<dist[j->first]){
+                        dist[j->first] = dist[u]+j->second;
+                    }
+                }
+            }
+            for (int i = 0; i < adjList.size(); i++)
+            {
+                cout<<i<<" "<<dist[i]<<endl;
+            }
+        }
+
+        int minDistance(vector<int> dist, vector<bool> visited){
+            int min = __INT_MAX__;
+            int min_index;
+            for (int i = 0; i < adjList.size(); i++)
+            {
+                if(!visited[i] && dist[i]<=min){
+                    min = dist[i];
+                    min_index = i;
+                }
+            }
+            return min_index;
+        }
+
+
+        
+};
+
+class Union_find_Array_Tree{
+    private:
+        vector<int> parent;
+        vector<int> rank;
+    public:
+        Union_find_Array_Tree(int V){
+            parent.resize(V);
+            rank.resize(V);
+            for (int i = 0; i < V; i++)
+            {
+                parent[i] = i;
+                rank[i] = 0;
+            }
+        }
+        int find(int u){
+            if(parent[u]==u){
+                return u;
+            }
+            return parent[u] = find(parent[u]);
+        }
+
+        int Union(int u,int v){
+            int u_rep = find(u);
+            int v_rep = find(v);
+            if(u_rep==v_rep){
+                return 0;
+            }
+            if(rank[u_rep]>rank[v_rep]){
+                parent[v_rep] = u_rep;
+            }
+            else if(rank[u_rep]<rank[v_rep]){
+                parent[u_rep] = v_rep;
+            }
+            else{
+                parent[u_rep] = v_rep;
+                rank[v_rep]++;
+            }
+            return 1;
+        }      
+};
+
+class Union_Find_DoublyLinkedList{
+    struct Node{
+        int data;
+        Node *left;
+        Node *right;
+    };
+    private:
+        vector<struct Node*> addr;
+    public:
+        Union_Find_DoublyLinkedList(int V){
+            addr.resize(V);
+            for (int i = 0; i < V; i++)
+            {
+                addr[i] = new Node;
+                addr[i]->data = i;
+                addr[i]->left = NULL;
+                addr[i]->right = NULL;
+            }
+        }
+        Node* find(int u){
+            Node *temp = addr[u];
+            while(temp->right!=NULL){
+                temp = temp->right;
+            }
+            return temp;
+        }
+        int Union(int u,int v){
+            Node *u_rep = find(u);
+            Node *v_rep = find(v);
+            if(u_rep==v_rep){
+                return 0;
+            }
+            addr[u]->right=addr[v];
+            addr[v]->left=addr[u];
+            return 1;
+        } 
+};
+
 
 
 int main(int argc, char const *argv[])
