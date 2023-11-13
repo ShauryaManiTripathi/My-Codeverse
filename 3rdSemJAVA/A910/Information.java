@@ -1,3 +1,4 @@
+package A910;
 import java.util.Scanner;
 
 class InvalidEmailException extends Exception {
@@ -5,7 +6,6 @@ class InvalidEmailException extends Exception {
         super(message);
     }
 }
-
 class InvalidPINException extends Exception {
     public InvalidPINException(String message) {
         super(message);

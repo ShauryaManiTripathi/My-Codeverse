@@ -339,11 +339,11 @@ class Graph_Competitive{
             for (int i = 0; i < adjList.size(); i++)
             {
                 int u = minDistance(dist,visited);
-                visited[u] = true;
+                visited[u] = true; 
                 for(auto j = adjList[u].begin(); j!=adjList[u].end(); j++){
                     if(!visited[j->first] && dist[u]!=__INT_MAX__ && dist[u]+j->second<dist[j->first]){
                         dist[j->first] = dist[u]+j->second;
-                    }
+            ba        }
                 }
             }
             for (int i = 0; i < adjList.size(); i++)
@@ -447,8 +447,6 @@ class Union_Find_DoublyLinkedList{
             return 1;
         } 
 };
-
-
 
 int main(int argc, char const *argv[])
 {

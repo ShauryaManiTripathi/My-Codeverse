@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ExampleSybchronize3",
+            "request": "launch",
+            "mainClass": "MyPackage.ExampleSybchronize3",
+            "projectName": "VScode_154541fc"
+        },
+        {
+            "type": "java",
+            "name": "Sumfromfile",
+            "request": "launch",
+            "mainClass": "FileHandling.Sumfromfile",
+            "projectName": "VScode_154541fc"
+        },
+        {
+            "type": "java",
+            "name": "FileReadWrite",
+            "request": "launch",
+            "mainClass": "FileHandling.FileReadWrite",
+            "projectName": "VScode_154541fc"
+        },
+        {
+            "type": "java",
+            "name": "sumfromfile",
+            "request": "launch",
+            "mainClass": "FileHandling.sumfromfile",
+            "projectName": "VScode_154541fc"
+        },
+        {
+            "type": "java",
+            "name": "ExampleCounterSynchronize",
+            "request": "launch",
+            "mainClass": "MyPackage.ExampleCounterSynchronize",
+            "projectName": "VScode_154541fc"
+        },
+        {
+            "type": "java",
             "name": "q1",
             "request": "launch",
             "mainClass": "q1",
