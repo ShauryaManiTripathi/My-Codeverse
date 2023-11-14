@@ -10,9 +10,11 @@ class Graph_adjList
 {
     private:
     vector<list<int>> adjList;
+    vector<list<int>> gRev;
     vector<list<int>> layerList;
     vector<list<int>> BFStree;
     vector<list<int>> DFStree;
+    vector<pair<int,int>> timeStamp;
     public:
         ////////////////////////////////////////////////////////////////////////////////Constructor
         Graph_adjList(int V){
@@ -28,32 +30,7 @@ class Graph_adjList
             }
         cout<<"Graph Created"<<endl;
         }
-        /***
-         *      _   _           _                     
-         *     | \ | |         | |                    
-         *     |  \| |   ___   | |_     ___    ___    
-         *     | . ` |  / _ \  | __|   / __|  / _ \   
-         *     | |\  | | (_) | | |_    \__ \ | (_) |  
-         *     |_| \_|  \___/   \__|   |___/  \___/   
-         *                                            
-         *                                            
-         *      _____                   _         _   
-         *     |  __ \                 (_)       | |  
-         *     | |__) |   __ _    ___   _   ___  | |_ 
-         *     |  _  /   / _` |  / __| | | / __| | __|
-         *     | | \ \  | (_| | | (__  | | \__ \ | |_ 
-         *     |_|  \_\  \__,_|  \___| |_| |___/  \__|
-         *                                            
-         *                                            
-         *       _____               _                
-         *      / ____|             | |               
-         *     | |        ___     __| |   ___   ___   
-         *     | |       / _ \   / _` |  / _ \ / __|  
-         *     | |____  | (_) | | (_| | |  __/ \__ \  
-         *      \_____|  \___/   \__,_|  \___| |___/  
-         *                                            
-         *                                            
-         */
+        
         // i.e. most of them work on directed and undirected graphs
         ////////////////////////////////////////////////////////////////////////////////basicBFS
         void BFS(int s){
@@ -343,7 +320,7 @@ class Graph_Competitive{
                 for(auto j = adjList[u].begin(); j!=adjList[u].end(); j++){
                     if(!visited[j->first] && dist[u]!=__INT_MAX__ && dist[u]+j->second<dist[j->first]){
                         dist[j->first] = dist[u]+j->second;
-            ba        }
+                    }
                 }
             }
             for (int i = 0; i < adjList.size(); i++)

@@ -1,4 +1,3 @@
-package A910;
 import java.util.Scanner;
 
 class InvalidEmailException extends Exception {

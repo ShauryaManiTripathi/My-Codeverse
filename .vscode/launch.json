@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "test",
+            "request": "launch",
+            "mainClass": "endsem.test",
+            "projectName": "VScode_154541fc"
+        },
+        {
+            "type": "java",
+            "name": "tes",
+            "request": "launch",
+            "mainClass": "endsem.tes",
+            "projectName": "VScode_154541fc"
+        },
+        {
+            "type": "java",
+            "name": "management",
+            "request": "launch",
+            "mainClass": "endsem.management",
+            "projectName": "VScode_154541fc"
+        },
+        {
+            "type": "java",
             "name": "ExampleSybchronize3",
             "request": "launch",
             "mainClass": "MyPackage.ExampleSybchronize3",
