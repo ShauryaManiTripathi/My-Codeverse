@@ -54,8 +54,7 @@ class Graph_adjList
                 }
             }
             free(visited);
-        }    vector<list<int>> adjList;
-
+        }
         ////////////////////////////////////////////////////////////////////////////////LayerListMaker
         vector<list<int>> BFSLayerList(int s){
             bool *visited = new bool[adjList.size()];
@@ -250,6 +249,37 @@ class Graph_adjList
      */
     //LETS START CODING
     ////////////////////////////////////////////////////////////////////////////////ta ta ta...
+        void dijkstra(int s){
+            vector<int> dist(adjList.size(),__INT_MAX__);
+            vector<bool> visited(adjList.size(),false);
+            dist[s] = 0;
+            for (int i = 0; i < adjList.size(); i++)
+            {
+                int u = minDistance(dist,visited);
+                visited[u] = true; 
+                for(auto j = adjList[u].begin(); j!=adjList[u].end(); j++){
+                    if(!visited[*j] && dist[u]!=__INT_MAX__ && dist[u]+1<dist[*j]){
+                        dist[*j] = dist[u]+1;
+                    }
+                }
+            }
+            for (int i = 0; i < adjList.size(); i++)
+            {
+                cout<<i<<" "<<dist[i]<<endl;
+            }
+        }
+        int minDistance(vector<int> dist, vector<bool> visited){
+            int min = __INT_MAX__;
+            int min_index;
+            for (int i = 0; i < adjList.size(); i++)
+            {
+                if(!visited[i] && dist[i]<=min){
+                    min = dist[i];
+                    min_index = i;
+                }
+            }
+            return min_index;
+        }
     
 };
 class Graph_Competitive{
@@ -437,5 +467,6 @@ int main(int argc, char const *argv[])
     g.checkBipartiteWithoutColoring(0);
     g.addEdge(0, 4);
     g.printGraph();
+    g.dijkstra(0);
     return 0;
 }
