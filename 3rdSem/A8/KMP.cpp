@@ -48,8 +48,8 @@ void HuntPattern(char str[], char pat[])
 }
 int main(int argc, char const *argv[])
 {
-	char str[1000] = "ababababca";
-	char pat[1000] = "abababca";
+	char str[1000] = "Nitin Nitisha Nipples Nitor siNitor";
+	char pat[1000] = "Nit";
 	HuntPattern(str, pat);
 	return 0;
 }

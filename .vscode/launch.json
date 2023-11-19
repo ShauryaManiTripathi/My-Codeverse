@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Server",
+            "request": "launch",
+            "mainClass": "Server",
+            "projectName": "VScode_154541fc"
+        },
+        {
+            "type": "java",
             "name": "test",
             "request": "launch",
             "mainClass": "endsem.test",

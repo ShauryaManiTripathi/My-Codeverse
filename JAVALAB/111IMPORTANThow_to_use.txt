@@ -1,0 +1,15 @@
+open this directory in console
+1. javac Server.java
+2. javac Client.java
+3. javac ClientHandler.java
+
+Now open two more console in this directory
+
+
+in first console
+run - java Server
+
+in second console
+run - java Client
+
+u can give input in client
