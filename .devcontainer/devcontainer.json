@@ -1,0 +1,14 @@
+{
+  "name": "my-devcontainer",
+  "version": "0.1.0",
+  "baseImage": "ubuntu:latest",
+  "commands": [
+    "apt-get update && apt-get install -y openjdk-11-jdk python3-pip g++"
+  ],
+  "ports": [
+    "8080:8080"
+  ],
+  "volumes": [
+    ".:/workspace"
+  ]
+}
