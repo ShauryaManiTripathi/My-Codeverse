@@ -19,7 +19,8 @@ public:
         for (int i = 0; i < V; i++)
         {
             while (1)
-            {
+            {   
+                
                 int x;
                 cin >> x;
                 if (x == -1)
