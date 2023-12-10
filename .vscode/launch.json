@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "MyClient",
+            "request": "launch",
+            "mainClass": "MyClient",
+            "projectName": "VScode_154541fc"
+        },
+        {
+            "type": "java",
+            "name": "MyServer",
+            "request": "launch",
+            "mainClass": "MyServer",
+            "projectName": "VScode_154541fc"
+        },
+        {
+            "type": "java",
+            "name": "INetDemo",
+            "request": "launch",
+            "mainClass": "endSemJava.INetDemo",
+            "projectName": "VScode_154541fc"
+        },
+        {
+            "type": "java",
             "name": "Server",
             "request": "launch",
             "mainClass": "Server",
