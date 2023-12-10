@@ -3,7 +3,8 @@
     "files.associations": {
         "cmath": "cpp",
         "iostream": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "bitset": "cpp"
     },
     "java.debug.settings.onBuildFailureProceed": true
 }
