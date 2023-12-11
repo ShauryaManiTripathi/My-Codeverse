@@ -100,6 +100,12 @@ int main(int argc, char const *argv[])
 
     bitset<32> y3(N);
     cout<<y3<<endl;//line 19
+
+
+
     return 0;
+    //decimalToBinary
+    //decimal to binary bitwise
+    
 }
 
