@@ -53,7 +53,7 @@ int main(int argc, char const *argv[])
 
     //check odd / even
     t=3;
-    //1 if odd
+    //1 if bitset<32> z1((__INT_MAX__+1)>>5);odd
     cout<<"3 is "<<(t&1)<<" while 4 is "<<((t+1)&1)<<endl;//line 8
 
     //checks if state of a bit (set or reset)
@@ -100,11 +100,6 @@ int main(int argc, char const *argv[])
 
     bitset<32> y3(N);
     cout<<y3<<endl;//line 19
-
-
-
-
-
     return 0;
 }
 
