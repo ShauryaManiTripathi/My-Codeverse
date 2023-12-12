@@ -102,10 +102,19 @@ int main(int argc, char const *argv[])
     cout<<y3<<endl;//line 19
 
 
+    unsigned int t_=-1;
+    bitset<32> tt(t_);
+    cout<<t_<<endl;//line 20
 
     return 0;
     //decimalToBinary
     //decimal to binary bitwise
+
+    // create a unsigned int mask, with MSB=1 ,rest 0
+    // now take bitwise & with the number, if its >0, print 1, otherwise 0 , then right shift mask and repeat
+    // while operating with negative numbers, ignore singned bit, 
+    // assume positive number and start masking from 31th bit
+
     
 }
 
