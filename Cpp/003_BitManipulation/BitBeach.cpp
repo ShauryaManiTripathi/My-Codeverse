@@ -97,7 +97,7 @@ int main(int argc, char const *argv[])
     cout<<y2<<endl;//line 18
 
     N=N|M;
-
+    
     bitset<32> y3(N);
     cout<<y3<<endl;//line 19
 
