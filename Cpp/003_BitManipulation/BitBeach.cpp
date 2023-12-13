@@ -108,7 +108,7 @@ int main(int argc, char const *argv[])
 
     return 0;
     //decimalToBinary
-    //decimal to binary bitwise
+    //decimal to binary bitwise7
 
     // create a unsigned int mask, with MSB=1 ,rest 0
     // now take bitwise & with the number, if its >0, print 1, otherwise 0 , then right shift mask and repeat
