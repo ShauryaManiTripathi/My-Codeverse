@@ -20,7 +20,7 @@ int checkBit(int n,int i){
 }
 
 void clearRange(int &n,int j,int i){
-    int mask=((~0)<<j)|((1<<i)-1);//how to make range mask, starting at but of order J and ending before but of order i; i.e. for ....0000110, j=3,i=1; it will generate invert mask = ......111111001
+    int mask=((~0)<<j)|((1<<i)-1);//how to make range mask, starting at but of order J and ending befor e but of order i; i.e. for ....0000110, j=3,i=1; it will generate invert mask = ......111111001
     n=n&mask;
 }
 
