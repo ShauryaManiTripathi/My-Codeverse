@@ -19,5 +19,6 @@ int main(int argc, char const *argv[])
         putchar(ch);
         ch = getchar();
     }
+    exit(0);
     return 0;
 }
