@@ -1,18 +1,15 @@
 import pandas as pd
 
-
-Books_data = {
-    'Subject': ['AI', 'Operating System', 'Chemistry', 'DBMS', 'AI', 'Economics'],
-    'Book_Authors': ['shaurya', 'ritik', 'bhemm', 'ritik', 'shaurya', 'chutki'],
-    'No_of_Books': [10, 25, 18, 22, 10, 16]
+# Define book data with modified names and values
+library_data = {
+    'Field': ['Artificial Intelligence', 'Operating Systems', 'Chemistry', 'Database Management', 'Artificial Intelligence', 'Economics'],
+    'Authors': ['Alex', 'Ryan', 'Emma', 'Ryan', 'Alex', 'Sophie'],
+    'Quantity': [15, 30, 20, 25, 15, 18]
 }
 
-IIIT_Library = pd.DataFrame(Books_data)
+university_library = pd.DataFrame(library_data)
 
-sum_per_group = IIIT_Library.groupby('Subject')['No_of_Books'].sum()
+sum_per_category = university_library.groupby('Field')['Quantity'].sum()
 
-print("Total number of books grouped by subject:")
-print(sum_per_group)
-
-
-
+print("Total quantity of books grouped by field:")
+print(sum_per_category)

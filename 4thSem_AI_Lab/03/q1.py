@@ -1,23 +1,26 @@
 import pandas as pd
 
-Student_Data = {
-    'Std_Name': ['shaurya', 'ritik', 'bheem', 'chutki', 'dholu'],
-    'Roll_no': [220101, 2201102, 2201103, 2201104, 2201105],
-    'CPI': [7.2, 8.3, 5.4, 6.85, 7.53]
+# Define student data with modified names and values
+student_info = {
+    'Student_Name': ['Alice', 'Bob', 'Charlie', 'Diana', 'Eva'],
+    'Roll_Number': [220201, 220202, 220203, 220204, 220205],
+    'Cumulative_GPA': [8.1, 7.5, 6.9, 8.4, 7.2]
 }
 
-df = pd.DataFrame(Student_Data)
+# Create DataFrame
+student_df = pd.DataFrame(student_info)
 
+# Filter DataFrame where Cumulative GPA > 7.0
+filtered_student_df = student_df[student_df['Cumulative_GPA'] > 7.0]
 
-filtered_df = df[df['CPI'] > 6.0]
+# Calculate mean, median, and standard deviation of Cumulative GPA
+mean_gpa = student_df['Cumulative_GPA'].mean()
+median_gpa = student_df['Cumulative_GPA'].median()
+std_gpa = student_df['Cumulative_GPA'].std()
 
-
-mean = df['CPI'].mean()
-median = df['CPI'].median()
-std = df['CPI'].std()
-
-print("Filtered DataFrame where CPI > 6.0:")
-print(filtered_df)
-print("\n Mean CPI:", mean)
-print("Median CPI:", median)
-print("Standard Deviation of CPI:", std)
+# Print filtered DataFrame and statistics
+print("Filtered DataFrame where Cumulative GPA > 7.0:")
+print(filtered_student_df)
+print("\nMean Cumulative GPA:", mean_gpa)
+print("Median Cumulative GPA:", median_gpa)
+print("Standard Deviation of Cumulative GPA:", std_gpa)
