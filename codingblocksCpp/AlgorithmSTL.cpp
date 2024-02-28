@@ -34,7 +34,6 @@ int main() {
     // Pair
     std::pair<int, std::string> myPair = std::make_pair(42, "Hello");
     std::cout << "Pair: " << myPair.first << ", " << myPair.second << std::endl;
-
     // Rotate
     std::rotate(numbers.begin(), numbers.begin() + 3, numbers.end());
     std::cout << "Rotated vector: ";
