@@ -45,7 +45,6 @@ void solve()
                 {
                     caught = 0;
                 }
-                
             }
             k++;
             j++;
