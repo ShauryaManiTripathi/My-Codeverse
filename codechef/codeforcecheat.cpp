@@ -4,6 +4,17 @@ using namespace std;
 #define ll long long
 #define endl '\n'
 #define debug(x) cout << #x << " = " << x << endl
+#define pii pair<int, int>
+#define pll pair<ll, ll>
+#define vi vector<int>
+#define vll vector<ll>
+#define vvi vector<vector<int>>
+#define vvl vector<vector<ll>>                                                       
+#define vpii vector<pair<int, int>>
+#define vpll vector<pair<ll, ll>>
+#define pb push_back
+
+
 
 void solve() {
     int a,b;

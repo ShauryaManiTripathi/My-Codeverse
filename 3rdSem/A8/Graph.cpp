@@ -14,7 +14,7 @@ private:
 public:
     ////////////////////////////////////////////////////////////////////////////////Constructor
     Graph_adjList(int V)
-    {
+    { 
         adjList.resize(V);
         for (int i = 0; i < V; i++)
         {
@@ -35,7 +35,13 @@ public:
     ////////////////////////////////////////////////////////////////////////////////basicBFS
     void BFS(int s)
     {
-        bool *visited = new bool[adjList.size()];
+        bool *visited = new b    // This is utility for DFS
+    void DFSUtil(int s, bool visited[])
+    {
+        visited[s] = true;
+        cout << s << " ";
+        for (auto i = adjList[s].begin(); i != adjList[s].end(); i++)
+ool[adjList.size()];
         for (int i = 0; i < adjList.size(); i++)
         {
             visited[i] = false;
